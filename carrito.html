@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <link rel="icon" href="images/paz-baires-logotipo-blanco-2.webp" />
+    <link rel="stylesheet" href="carrito.css" />
+
+    <title>Paz Baires</title>
+  </head>
+  <body>
+    <header>
+      <div class="top-bar">
+        <div class="marquee-track">
+          <span>ENVÍOS A TODO EL PAÍS | COMPRA MÍNIMA $70.000</span>
+          <span>ENVÍOS A TODO EL PAÍS | COMPRA MÍNIMA $70.000</span>
+          <span>ENVÍOS A TODO EL PAÍS | COMPRA MÍNIMA $70.000</span>
+          <span>ENVÍOS A TODO EL PAÍS | COMPRA MÍNIMA $70.000</span>
+        </div>
+        <div class="marquee-track">
+          <span>ENVÍOS A TODO EL PAÍS | COMPRA MÍNIMA $70.000</span>
+          <span>ENVÍOS A TODO EL PAÍS | COMPRA MÍNIMA $70.000</span>
+          <span>ENVÍOS A TODO EL PAÍS | COMPRA MÍNIMA $70.000</span>
+          <span>ENVÍOS A TODO EL PAÍS | COMPRA MÍNIMA $70.000</span>
+        </div>
+      </div>
+
+      <div class="header">
+        <div class="nav-link">
+          <a href="como-comprar.html">COMO COMPRAR</a>
+          <a href="tienda.html">TIENDA</a>
+        </div>
+
+        <a href="index.html" class="logo-container">
+          <img class="logo" src="images/paz-baires-logotipo.webp" alt="" />
+        </a>
+
+        <a href="carrito.html" class="carrito active"
+          >MI CARRITO
+          <img class="icon" src="images/carrito-blanco-icon.webp" alt="" />
+        </a>
+      </div>
+    </header>
+    <main>
+      <div class="carrito-wrapper">
+        <div class="items-container">
+          <table class="carrito-tabla">
+            <thead>
+              <tr>
+                <th>PRODUCTO</th>
+                <th>PRECIO</th>
+                <th>CANTIDAD</th>
+                <th>SUBTOTAL</th>
+              </tr>
+            </thead>
+
+            <tbody id="carrito-body">
+              <tr class="carrito-item">
+                <td class="prod-detalles">
+                  <img src="images/ejemplo-producto.jpg" alt="Producto" />
+                  <div class="info-texto">
+                    <p>
+                      <b><i>Conjunto pijama de saten top y short</i></b>
+                    </p>
+                    <p class="variante-tag"><b>Estampado:</b> Estampado N°6</p>
+                  </div>
+                </td>
+
+                <td class="prod-precio">$ 5.800</td>
+
+                <td class="prod-qty">
+                  <div class="qty-selector">
+                    <button>-</button>
+                    <input type="number" value="1" readonly />
+                    <button>+</button>
+                  </div>
+                </td>
+
+                <td class="prod-subtotal"><strong>$ 5.800</strong></td>
+
+                <td class="prod-remove">
+                  <button class="btn-remove">×</button>
+                </td>
+              </tr>
+              <tr class="carrito-item">
+                <td class="prod-detalles">
+                  <img src="images/ejemplo-producto.jpg" alt="Producto" />
+                  <div class="info-texto">
+                    <p>
+                      <b><i>Conjunto pijama de saten top y short</i></b>
+                    </p>
+                    <p class="variante-tag"><b>Estampado:</b> Estampado N°6</p>
+                  </div>
+                </td>
+
+                <td class="prod-precio">$ 5.800</td>
+
+                <td class="prod-qty">
+                  <div class="qty-selector">
+                    <button>-</button>
+                    <input type="number" value="1" readonly />
+                    <button>+</button>
+                  </div>
+                </td>
+
+                <td class="prod-subtotal"><strong>$ 5.800</strong></td>
+
+                <td class="prod-remove">
+                  <button class="btn-remove">×</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <a href="tienda.html" class="btn-volver"
+            ><b>SEGUIR COMPRANDO</b>
+            <p>Volver a la TIENDA</p>
+            </a
+          >
+        </div>
+
+        <div class="totales-container">
+          <div class="envio-section">
+            <p>Seleccioné <b>método de envío:</b></p>
+            <div class="envio-options">
+              <label class="option-card active">
+                <input type="radio" name="envio" value="expreso" />
+                <div class="option-info">
+                  <p><b>Transporte o expreso</b></p>
+                  <p class="help-p">Puedes elegir el transporte que prefieras.</p>
+                </div>
+              </label>
+
+              <label class="option-card">
+                <input type="radio" name="envio" value="moto" />
+                <div class="option-info">
+                  <p><b>Envío en moto</b></p>
+                  <p class="help-p">Consulta el precio según la dirección.</p>
+                </div>
+              </label>
+
+              <label class="option-card">
+                <input type="radio" name="envio" value="local" />
+                <div class="">
+                  <p><b>Retiro en el local</b></p>
+                  <p class="help-p">Sin costo. Te esperamos en nuestra sucursal.</p>
+                </div>
+              </label>
+            </div>
+
+            <hr class="hr-carrito" />
+
+            <div class="pago-section">
+              <p>Seleccioné <b>método de pago:</b></p>
+              <div class="pago-options">
+                <label class="option-card active">
+                  <input type="radio" name="pago" value="transferencia" />
+                  <div class="option-info">
+                    <p><b>Transferencia (MP)</b></p>
+                    <p class="help-p">Te enviaremos el CVU/Alias</p>
+                  </div>
+                </label>
+
+                <label class="option-card">
+                  <input type="radio" name="pago" value="efectivo" />
+                  <div class="option-info">
+                    <p><b>Efectivo</b></p>
+                    <p class="help-p">Abonás al retirar tu pedido</p>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <hr class="hr-carrito" />
+
+            <div class="total-row">
+              <h3>TOTAL</h3>
+              <h2>$ 5.600</h2>
+            </div>
+
+            <button class="btn-enviar">
+              <img src="images/whatsapp-icon.webp" alt="" />
+              FINALIZAR COMPRA Y ENVIAR
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="container-footer">
+        <div class="social-media-column">
+          <h2 class="titles-footer">Seguinos</h2>
+          <a class="data" target="_blank" href=""
+            ><img
+              class="icons-data"
+              src="images/instagram-icon.webp"
+              alt=""
+            />@pazbaires</a
+          >
+          <a class="data" target="_blank" href=""
+            ><img
+              class="icons-data"
+              src="images/facebook-icon.webp"
+              alt=""
+            />Paz Baires</a
+          >
+          <a class="data" target="_blank" href=""
+            ><img
+              class="icons-data"
+              src="images/tiktok-icon.webp"
+              alt=""
+            />@paz.baires</a
+          >
+        </div>
+        <div class="contact-column">
+          <h2 class="titles-footer">Contacto</h2>
+          <a class="data" target="_blank" href=""
+            ><img class="icons-data" src="images/telefono-icon.webp" alt="" />11
+            5601 8912</a
+          >
+          <a class="data" target="_blank" href=""
+            ><img
+              class="icons-data"
+              src="images/correo-icon.webp"
+              alt=""
+            />pazbaires.adm@gmail.com</a
+          >
+        </div>
+      </div>
+      <div class="footer-footer">
+        <div class="copyright">
+          <p>Paz Baires © Copyright 2026. Todos los derechos reservados.</p>
+          <hr />
+        </div>
+        <div class="firma-page">
+          <p>Pagina creada por</p>
+          <img src="images/GabCoder.webp" class="firma-icon" alt="" />
+        </div>
+      </div>
+      <div class="chat-whatsapp">
+        <input type="checkbox" id="chat-toggle" class="chat-toggle" />
+        <label for="chat-toggle" class="chat-button">
+          <img src="images/whatsapp-icon.webp" alt="" />Haz click aquí para
+          comunicarte
+        </label>
+
+        <div class="chat-container">
+          <div class="chat-header">
+            <img
+              src="images/paz-baires-logotipo-2.webp"
+              class="chat-logo"
+              alt=""
+            />
+            <div>
+              <h3>Paz Baires</h3>
+              <span class="status">En linea</span>
+            </div>
+            <label for="chat-toggle" class="close-chat">&times;</label>
+          </div>
+          <div class="chat-body">
+            <div class="chat-message">
+              <p>
+                Hola! bienvenido a <b>Paz Baires. 😊</b><br />¿En qué podemos
+                ayudarte?
+              </p>
+            </div>
+          </div>
+          <div class="chat-footer">
+            <input
+              type="text"
+              id="user-message"
+              placeholder="Hola! Vengo de la página web..."
+            />
+            <button class="send-btn" onclick="sendMessage()">➤</button>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

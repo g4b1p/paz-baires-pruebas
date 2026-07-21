@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <link rel="icon" href="images/paz-baires-logotipo-blanco-2.webp" />
+    <link rel="stylesheet" href="info-producto.css" />
+
+    <title>Paz Baires</title>
+  </head>
+  <body>
+    <header>
+      <div class="top-bar">
+        <div class="marquee-track">
+          <span>ENVÍOS A TODO EL PAÍS | COMPRA MÍNIMA $70.000</span>
+          <span>ENVÍOS A TODO EL PAÍS | COMPRA MÍNIMA $70.000</span>
+          <span>ENVÍOS A TODO EL PAÍS | COMPRA MÍNIMA $70.000</span>
+          <span>ENVÍOS A TODO EL PAÍS | COMPRA MÍNIMA $70.000</span>
+        </div>
+        <div class="marquee-track">
+          <span>ENVÍOS A TODO EL PAÍS | COMPRA MÍNIMA $70.000</span>
+          <span>ENVÍOS A TODO EL PAÍS | COMPRA MÍNIMA $70.000</span>
+          <span>ENVÍOS A TODO EL PAÍS | COMPRA MÍNIMA $70.000</span>
+          <span>ENVÍOS A TODO EL PAÍS | COMPRA MÍNIMA $70.000</span>
+        </div>
+      </div>
+
+      <div class="header">
+        <div class="nav-link">
+          <a href="como-comprar.html">COMO COMPRAR</a>
+          <a href="tienda.html">TIENDA</a>
+        </div>
+
+        <a href="index.html" class="logo-container">
+          <img class="logo" src="images/paz-baires-logotipo.webp" alt="" />
+        </a>
+
+        <a href="carrito.html" class="carrito"
+          >MI CARRITO
+          <img class="icon" src="images/carrito-icon.webp" alt="" />
+        </a>
+      </div>
+    </header>
+    <main>
+      <div class="product-container">
+        <div class="product-gallery">
+          <div class="main-image-wrapper">
+            <img
+              src="images/flecha-izq.webp"
+              class="nav-arrow prev-arrow"
+              id="prevBtn"
+              alt="Anterior"
+            />
+
+            <div class="main-image">
+              <img src="images/ejemplo-producto.jpg" id="mainImg" alt="" />
+            </div>
+
+            <img
+              src="images/flecha-der.webp"
+              class="nav-arrow next-arrow"
+              id="prevBtn"
+              alt="Anterior"
+            />
+          </div>
+          <div class="thumbnails" id="thumbBar">
+            <img
+              src="images/ejemplo-producto.jpg"
+              class="image-select active"
+              alt=""
+            />
+            <img
+              src="images/ejemplo-producto.jpg"
+              class="image-select"
+              alt=""
+            />
+            <img
+              src="images/ejemplo-producto.jpg"
+              class="image-select"
+              alt=""
+            />
+          </div>
+        </div>
+
+        <div class="product-info">
+          <div class="product-header">
+            <p>PAZ BAIRES</p>
+            <h1>Conjunto Pijama Saten Top</h1>
+          </div>
+
+          <div class="price-section"> <!---- CASO MAYOR MENOR ---->
+            <div class="mayor-menor">
+              <div class="precio-mayorista">
+                <p>Precio <b>mayorista:</b></p>
+                <h1>$ 5.800</h1>
+              </div>
+              <div class="precio-minorista">
+                <p>Precio <b>minorista:</b></p>
+                <h1>$ 6.800</h1>
+              </div>
+            </div>
+            <div class="beneficio">
+              <b>SE PUEDE ENCARGAR LA DOCENA.</b>
+              <br />
+              Válido para este producto.
+            </div>
+          </div>
+
+          
+
+          <div id="techDetails" class="details-grid">
+            <div class="detail"><b>Material:</b> <br />100% Algodón</div>
+            <div class="detail"><b>Tamaño:</b> <br />50x80cm</div>
+          </div>
+
+          <div id="variantSelector" class="selector-section"> <!---- CASO ESTAMPADO ---->
+            <p><b>ESTAMPADO:</b> No seleccionado</p>
+            <p class="help-p">
+              <i>Seleccioná el diseño haciendo click en las fotos de la galería.</i>
+            </p>
+          </div>
+
+          
+
+          <div class="quantity-selector">
+            <p><b>CANTIDAD:</b></p>
+            <div class="quantity-controls">
+              <button type="button" class="qty-btn" id="decreaseQty">−</button>
+              <input
+                type="number"
+                id="itemQuantity"
+                value="1"
+                min="1"
+                readonly
+              />
+              <button type="button" class="qty-btn" id="increaseQty">+</button>
+            </div>
+            <p id="guia-seleccion" class="help-p"><i>Seleccioná un color y la cantidad.</i></p>
+          </div>
+
+          <div class="btns">
+            <button class="btn-whatsapp">
+              <img src="images/whatsapp-icon.webp" class="icon-btn" alt="">
+              CONSULTAR
+            </button>
+            <button class="btn-add-cart">
+              <img src="images/carrito-blanco-icon.webp" class="icon-btn" alt="">
+              AÑADIR AL CARRITO
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="container-footer">
+        <div class="social-media-column">
+          <h2 class="titles-footer">Seguinos</h2>
+          <a class="data" target="_blank" href=""
+            ><img
+              class="icons-data"
+              src="images/instagram-icon.webp"
+              alt=""
+            />@pazbaires</a
+          >
+          <a class="data" target="_blank" href=""
+            ><img
+              class="icons-data"
+              src="images/facebook-icon.webp"
+              alt=""
+            />Paz Baires</a
+          >
+          <a class="data" target="_blank" href=""
+            ><img
+              class="icons-data"
+              src="images/tiktok-icon.webp"
+              alt=""
+            />@paz.baires</a
+          >
+        </div>
+        <div class="contact-column">
+          <h2 class="titles-footer">Contacto</h2>
+          <a class="data" target="_blank" href=""
+            ><img class="icons-data" src="images/telefono-icon.webp" alt="" />11
+            5601 8912</a
+          >
+          <a class="data" target="_blank" href=""
+            ><img
+              class="icons-data"
+              src="images/correo-icon.webp"
+              alt=""
+            />pazbaires.adm@gmail.com</a
+          >
+        </div>
+      </div>
+      <div class="footer-footer">
+        <div class="copyright">
+          <p>Paz Baires © Copyright 2026. Todos los derechos reservados.</p>
+          <hr />
+        </div>
+        <div class="firma-page">
+          <p>Pagina creada por</p>
+          <img src="images/GabCoder.webp" class="firma-icon" alt="" />
+        </div>
+      </div>
+      <div class="chat-whatsapp">
+        <input type="checkbox" id="chat-toggle" class="chat-toggle" />
+        <label for="chat-toggle" class="chat-button">
+          <img src="images/whatsapp-icon.webp" alt="" />Haz click aquí para
+          comunicarte
+        </label>
+
+        <div class="chat-container">
+          <div class="chat-header">
+            <img
+              src="images/paz-baires-logotipo-2.webp"
+              class="chat-logo"
+              alt=""
+            />
+            <div>
+              <h3>Paz Baires</h3>
+              <span class="status">En linea</span>
+            </div>
+            <label for="chat-toggle" class="close-chat">&times;</label>
+          </div>
+          <div class="chat-body">
+            <div class="chat-message">
+              <p>
+                Hola! bienvenido a <b>Paz Baires. 😊</b><br />¿En qué podemos
+                ayudarte?
+              </p>
+            </div>
+          </div>
+          <div class="chat-footer">
+            <input
+              type="text"
+              id="user-message"
+              placeholder="Hola! Vengo de la página web..."
+            />
+            <button class="send-btn" onclick="sendMessage()">➤</button>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

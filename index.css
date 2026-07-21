@@ -1,0 +1,864 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+/* Le avisas al navegador que tu web SOLO está diseñada para modo claro */
+:root {
+    color-scheme: light;
+}
+
+/* Opcional: Si quieres forzarlo a nivel general en la etiqueta HTML */
+html {
+    color-scheme: light only;
+}
+
+body {
+    color-scheme: light;
+    -webkit-text-size-adjust: 100%;
+    /* Esto evita que iOS y navegadores in-app agranden la letra */
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-family: "Unbounded", sans-serif;
+    background-image: linear-gradient(to bottom, #7454d9, #8e6fe3, #a78bed, #bfa7f6, #d6c3ff);
+}
+
+/*-----------------TOP BAR-----------------*/
+.top-bar {
+    background-color: #8e6fe3;
+    color: #ffffff;
+    height: 30px;
+    /* Altura fija obligatoria */
+    overflow: hidden;
+    /* Esconde lo que sobra */
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    /* IMPORTANTE: obliga a la pista a ser tan larga como el texto */
+    animation: marquee-infinito 10s linear infinite;
+    /* 6s es muy rápido para compu, probá con 15s */
+}
+
+.marquee-content {
+    display: flex;
+    flex-shrink: 0;
+    /* Evita que los bloques se achiquen */
+}
+
+.marquee-track span {
+    font-size: 12px;
+    font-weight: bold;
+    padding-right: 60px;
+    /* Espacio entre repeticiones */
+    text-transform: uppercase;
+    text-transform: uppercase;
+    white-space: nowrap;
+    ;
+}
+
+@keyframes marquee-infinito {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+
+    /* Al llegar a -50%, el Bloque 2 está exactamente donde empezó el 1, 
+       haciendo que el salto sea imperceptible */
+}
+
+/*-----------------HEADER-----------------*/
+.header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    /* Tres columnas: izquierda, logo, derecha */
+    align-items: center;
+    /* Centra verticalmente */
+    margin: 0 5%;
+    padding: 10px 15px;
+    background-color: #ffffff;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.logo {
+    width: 190px;
+    height: auto;
+    justify-self: center;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    justify-self: start;
+}
+
+.nav-link a {
+    text-decoration: none;
+    color: #7454d9;
+}
+
+.carrito {
+    text-decoration: none;
+    color: #7454d9;
+    display: flex;
+    align-items: center;
+    justify-self: end;
+}
+
+.icon {
+    width: 25px;
+    height: auto;
+    margin-left: 8px;
+    margin-right: 0;
+}
+
+/*-----------------VIDEO-----------------*/
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* Ajusta la altura (80% de la pantalla) */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    z-index: 1;
+    -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
+
+.video-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    height: auto;
+    z-index: -1;
+    /* Lo envía al fondo */
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    /* Volvemos a cover porque el video ya viene con el formato correcto */
+    /* Cambiamos cover por contain para que se vea TODO el video */
+    background-color: rgb(255, 255, 255);
+    /* Opcional: por si el video no llena todo el alto, que el fondo sea negro */
+    width: 100%;
+    /* Ocupa todo el ancho */
+    display: block;
+}
+
+.video-movil {
+    display: none !important;
+}
+
+.video-pc {
+    display: block !important;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: white;
+    /* MEZCLA: Empieza con negro 40%, y termina con el violeta de tu marca */
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.4) 0%,
+            /* Oscuridad arriba */
+            rgba(0, 0, 0, 0.4) 60%,
+            /* Mantiene la oscuridad hasta el 60% */
+            #7454d9 100%
+            /* Funde hacia tu color al final */
+        );
+}
+
+/* Aplica esto a los textos (h1, h2, p) que estén dentro del video */
+.video-overlay h1 {
+    font-size: 45px;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    /* Ocupa el ancho disponible */
+    max-width: 800px;
+    /* Evita que las líneas sean infinitas en PC */
+}
+
+main {
+    padding: 0 10%;
+}
+
+/*-----------------FEATURES (ENVIO Y PAGO)-----------------*/
+.features {
+    margin: 40px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.feature {
+    border: 3px solid #ffffff;
+    color: #ffffff;
+    border-radius: 40px;
+    padding: 20px;
+    width: 48%;
+    height: auto;
+    text-align: center;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+}
+
+.feature img {
+    width: 110px;
+    height: auto;
+}
+
+/*-----------------CARTEL-----------------*/
+.cartel {
+    padding: 15px;
+    border-radius: 30px;
+    text-align: center;
+    font-weight: 800;
+    font-size: 2.5rem;
+    /* Animación de parpadeo */
+    animation: parpadeo 1s infinite;
+}
+
+@keyframes parpadeo {
+
+    0%,
+    100% {
+        background-color: white;
+        color: #b591ef;
+        /* Color de letra claro */
+        /* Capas: sombra 1 y sombra 2 */
+        text-shadow: 3px 3px 0px #c6abf1;
+    }
+
+    50% {
+        background-color: #7b68ee;
+        /* Color de fondo oscuro */
+        color: white;
+        /* Color de letra blanco */
+        /* Capas: sombra 1 y sombra 2 */
+        text-shadow: 3px 3px 0px #d8c1ff;
+    }
+}
+
+/*-----------------FLECHAS CARRUSEL-----------------*/
+.flecha-carrusel {
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 5px;
+
+    width: 50px;
+    /* Ajusta según el tamaño de tu imagen */
+    height: auto;
+    cursor: pointer;
+    position: absolute;
+    z-index: 10;
+    transition: transform 0.1s;
+}
+
+.flecha-carrusel:hover {
+    transform: scale(1.1);
+}
+
+.prev {
+    left: -50px;
+}
+
+.next {
+    right: -50px;
+}
+
+/*-----------------CARRUSEL Y PRODUCTO-----------------*/
+.carrusel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.productos, .sobre-nosotras {
+    margin: 40px 0;
+}
+
+.grid-productos {
+    display: flex;
+    /* Mantenemos flex para que se pongan en línea */
+    gap: 10px;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.producto-card img {
+    box-sizing: border-box;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    width: 100%;
+    border: 0;
+    border-radius: 20px;
+}
+
+.producto-card {
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex: 0 0 calc((100% - 20px) / 3);
+    min-width: calc((100% - 20px) / 3);
+    margin: 0;
+}
+
+.producto-href {
+    text-decoration: none;
+    color: #000000;
+}
+
+.info-prod {
+    margin: 20px;
+}
+
+.info-prod p {
+    margin: 5px 0;
+}
+
+.producto-header,
+.precios {
+    margin-bottom: 20px;
+}
+
+.opciones {
+    color: #b591ef;
+    font-weight: 800;
+}
+
+.precio-oferta,
+.precio-mayor,
+.precio-docena,
+.precio-unico {
+    font-size: 18px;
+}
+
+.etiqueta-oferta {
+    background-color: #ff5757;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 11px;
+    padding: 2px;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.precio-anterior {
+    font-size: 13px;
+    color: #979797;
+    text-decoration: line-through;
+}
+
+.btn-ver-mas {
+    width: 100%;
+    font-family: "Unbounded", sans-serif;
+    color: #ffffff;
+    background-color: #b591ef;
+    font-weight: 800;
+    border: 0;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.etiqueta-mayor {
+    background-color: #7454d9;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 11px;
+    padding: 2px;
+    width: 95px;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.etiqueta-docena {
+    background-color: #00bf63;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 11px;
+    padding: 2px;
+    width: 75px;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.etiqueta-unico {
+    background-color: #0079bf;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 11px;
+    padding: 3px;
+    width: 110px;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+/*-----------------SOBRE NOSOTRAS-----------------*/
+.not-cartel {
+    padding: 15px;
+    border-radius: 30px;
+    text-align: center;
+    font-weight: 800;
+    font-size: 2.5rem;
+    background-color: white;
+    color: #b591ef;
+    text-shadow: 3px 3px 0px #c6abf1;
+}
+
+.info-sobre-nosotras {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin: 20px 0;
+}
+
+.icon-direccion,
+.icon-horarios {
+    width: 50px;
+    height: auto;
+}
+
+.direccion h2,
+.horarios h2 {
+    margin: 10px;
+}
+
+.direccion p,
+.horarios p {
+    margin: 5px;
+}
+
+.direccion,
+.horarios {
+    background-color: #ffffff;
+    color: #b591ef;
+    border-radius: 20px;
+    padding: 20px;
+    width: 49%;
+    height: 220px;
+    text-align: center;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+}
+
+.semana {
+    display: flex;
+    justify-content: space-between;
+    text-align: start;
+}
+
+.sobre-nosotras iframe {
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+}
+
+/*-----------------FOOTER-----------------*/
+footer {
+    background-color: #ffffff;
+    margin: 0 5%;
+    border-radius: 20px 20px 0 0;
+    padding: 30px;
+}
+
+.container-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 0;
+}
+
+.social-media-column,
+.contact-column {
+    flex: 1 1 300px;
+}
+
+.icons-data {
+    width: 40px;
+    height: auto;
+    margin-right: 5px;
+}
+
+.titles-footer {
+    color: #7454d9;
+    margin: 30px 0;
+}
+
+.data {
+    text-decoration: none;
+    color: #7454d9;
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.copyright,
+.firma-page {
+    color: #7454d9;
+}
+
+.copyright p {
+    margin: 5px;
+    text-align: end;
+}
+
+hr {
+    border: 2px solid;
+    border-radius: 50px;
+    color: #7454d9;
+    opacity: 0.3;
+}
+
+.firma-page {
+    text-align: center;
+}
+
+.firma-page p {
+    margin: 5px;
+}
+
+.firma-icon {
+    width: auto;
+    height: 50px;
+}
+
+/*-----------------FOOTER (whatsapp)-----------------*/
+.chat-toggle {
+    display: none;
+}
+
+.chat-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #65cf72;
+    border: 0;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    animation: slideInRight 1.5s ease-out;
+    z-index: 10;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chat-button img {
+    width: 30px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.chat-container {
+    width: 360px;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background: #d6c3ff;
+    border-radius: 20px;
+    display: none;
+    flex-direction: column;
+    z-index: 10;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Mostrar chat cuando el checkbox está activo */
+.chat-toggle:checked~.chat-container {
+    display: flex;
+}
+
+.chat-header {
+    background: #7454d9;
+    color: white;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    /* Alinear verticalmente */
+    gap: 8px;
+    /* Espacio entre la imagen y el nombre */
+    border-radius: 20px;
+    position: relative;
+    /* Necesario para mover la "X" */
+}
+
+.chat-header h3 {
+    margin: 0;
+    margin-top: 10px;
+}
+
+.chat-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background-color: #ffffff;
+    padding: 5px;
+}
+
+.status {
+    font-size: 12px;
+    color: #d6c3ff;
+}
+
+.close-chat {
+    position: absolute;
+    top: 10px;
+    /* Mover más arriba */
+    right: 15px;
+    /* Ajustar la posición a la derecha */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* Ocultar chat cuando se cierra */
+.chat-toggle:not(:checked)~.chat-container {
+    display: none;
+}
+
+.chat-body {
+    background: #d6c3ff;
+    padding: 15px;
+}
+
+.chat-message {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.chat-message p {
+    line-height: 30px;
+}
+
+.chat-footer {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: #ffffff;
+    border-radius: 20px;
+}
+
+.chat-footer input {
+    flex: 1;
+    border: none;
+    color: gray;
+    background: #ffffff;
+    box-sizing: border-box;
+    font-family: "Unbounded", sans-serif;
+}
+
+.send-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/*-----------------RESPONSIVE-----------------*/
+@media (max-width: 1100px) {
+    main {
+        padding: 0 4%;
+    }
+
+    .header,
+    footer {
+        margin: 0 1%;
+    }
+
+    .video-container {
+        height: 100vh;
+        /* Un poco más bajo en celulares */
+    }
+
+    .producto-card {
+        /* Calculamos para que entren 2 productos y 1 gap de 20px */
+        flex: 0 0 calc((100% - 10px) / 2);
+        min-width: calc((100% - 10px) / 2);
+    }
+
+    .prev {
+        left: -20px;
+    }
+
+    .next {
+        right: -20px;
+    }
+
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .info-sobre-nosotras {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .direccion,
+    .horarios {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .header {
+        /* Cambiamos el grid por flexbox solo para celular */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        font-size: 9px;
+        /* El primer valor (15px) es la separación vertical entre logo y textos. 
+       El segundo (25px) es la separación horizontal entre los textos. */
+        gap: 10px 10px;
+        padding: 15px 10px;
+    }
+
+    /* 1. Forzamos al logo a ocupar toda la línea superior (100% de ancho) */
+    .logo-container {
+        flex: 0 0 100%;
+        display: flex;
+        justify-content: center;
+        order: 1;
+        /* Le decimos que vaya primero */
+    }
+
+    .logo {
+        width: 180px;
+    }
+
+    /* 2. LA MAGIA: Hacemos que el contenedor .nav-link desaparezca visualmente,
+     así sus enlaces ("COMO COMPRAR" y "TIENDA") quedan sueltos al nivel del carrito */
+    .nav-link {
+        display: contents;
+        gap: 10px;
+    }
+
+    /* 3. Acomodamos los textos en la segunda línea */
+    .nav-link a,
+    .carrito {
+        order: 2;
+        /* Les decimos que vayan en el segundo bloque */
+        font-size: 11px;
+        /* Achicamos penitas la letra para asegurar que entren en pantallas chicas */
+        margin: 0;
+    }
+
+    .icon {
+        width: 18px;
+        height: auto;
+        margin-left: 5px;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .video-overlay h1 {
+        font-size: 30px;
+    }
+
+    .carrusel-wrapper {
+        padding: 0 40px;
+        /* Espacio suficiente para las flechas de 30-40px */
+        display: flex;
+        justify-content: center;
+    }
+
+    .producto-card {
+        flex: 0 0 100%;
+        min-width: 100%;
+        /* Opcional: si lo quieres aún más chico, usa un % menor y margin auto */
+        /* flex: 0 0 90%; min-width: 90%; */
+    }
+
+    /* 3. Las flechas ahora las ubicamos en el padding que creamos */
+    .prev {
+        left: 1px;
+        /* Dentro del padding de 50px del wrapper */
+    }
+
+    .next {
+        right: 1px;
+        /* Dentro del padding de 50px del wrapper */
+    }
+
+    .flecha-carrusel {
+        position: absolute;
+        z-index: 10;
+        /* Si quieres que se vean más arriba/abajo, ajusta el top */
+        top: 40%;
+    }
+
+    .cartel,
+    .not-cartel {
+        font-size: 28px;
+        border-radius: 20px;
+        padding: 20px 10px;
+    }
+
+    .chat-button {
+        bottom: 10px;
+        right: 10px;
+        padding: 8px 10px;
+        border-radius: 10px;
+    }
+
+    .chat-button img {
+        width: 25px;
+    }
+
+    .chat-container {
+        width: 330px;
+        bottom: 60px;
+        right: 10px;
+    }
+}

@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <link rel="icon" href="images/paz-baires-logotipo-blanco-2.webp" />
+    <link rel="stylesheet" href="index.css" />
+
+    <title>Paz Baires</title>
+  </head>
+  <body>
+    <header>
+      <div class="top-bar">
+        <div class="marquee-track">
+          <span>ENVÍOS A TODO EL PAÍS | COMPRA MÍNIMA $70.000</span>
+          <span>ENVÍOS A TODO EL PAÍS | COMPRA MÍNIMA $70.000</span>
+          <span>ENVÍOS A TODO EL PAÍS | COMPRA MÍNIMA $70.000</span>
+          <span>ENVÍOS A TODO EL PAÍS | COMPRA MÍNIMA $70.000</span>
+        </div>
+        <div class="marquee-track">
+          <span>ENVÍOS A TODO EL PAÍS | COMPRA MÍNIMA $70.000</span>
+          <span>ENVÍOS A TODO EL PAÍS | COMPRA MÍNIMA $70.000</span>
+          <span>ENVÍOS A TODO EL PAÍS | COMPRA MÍNIMA $70.000</span>
+          <span>ENVÍOS A TODO EL PAÍS | COMPRA MÍNIMA $70.000</span>
+        </div>
+      </div>
+
+      <div class="header">
+        <div class="nav-link">
+          <a href="como-comprar.html">COMO COMPRAR</a>
+          <a href="tienda.html">TIENDA</a>
+        </div>
+
+        <a href="index.html" class="logo-container">
+          <img class="logo" src="images/paz-baires-logotipo.webp" alt="" />
+        </a>
+
+        <a href="carrito.html" class="carrito"
+          >MI CARRITO
+          <img class="icon" src="images/carrito-icon.webp" alt="" />
+        </a>
+      </div>
+
+      <section class="video-container">
+        <!-- Video para PC -->
+        <video autoplay muted loop playsinline class="video-bg video-pc">
+          <source
+            src="https://res.cloudinary.com/duoya2obs/video/upload/q_auto/f_auto/v1778288479/intro-pb-pc_l2ec3g.mp4"
+            type="video/mp4"
+          />
+        </video>
+
+        <!-- Video para Celu -->
+        <video autoplay muted loop playsinline class="video-bg video-movil">
+          <source
+            src="https://res.cloudinary.com/duoya2obs/video/upload/q_auto/f_auto/v1778288474/intro-pb-celu_ehioaz.mp4"
+            type="video/mp4"
+          />
+        </video>
+        <div class="video-overlay">
+          <h1>Bienvenido a nuestro Catálogo/Tienda Web!</h1>
+        </div>
+      </section>
+    </header>
+    <main>
+      <section class="features">
+        <div class="feature">
+          <img src="images/transaccion-icon.webp" alt="" />
+          <h2>Compra segura</h2>
+          <p>
+            Una vez que realices tu pedido nos comunicamos para confirmarla y
+            proceder con el pago.
+          </p>
+        </div>
+        <div class="feature">
+          <img src="images/envio-icon.webp" alt="" />
+          <h2>Envíos a todo el país</h2>
+          <p>Hacemos envíos a todo el país ya sea por expreso o por correo.</p>
+        </div>
+      </section>
+
+      <section class="productos nuevos-ingresos">
+        <div class="cartel">NUEVOS INGRESOS!</div>
+        <div class="carrusel-wrapper">
+          <img
+            src="images/flecha-izq.webp"
+            class="flecha-carrusel prev"
+            onclick="scrollCarrusel(-1, 'grid-nuevos')"
+          />
+
+          <div class="grid-productos" id="grid-nuevos">
+            <div class="producto-card">
+              <a href="" class="producto-href">
+                <img
+                  class="producto-img"
+                  loading="lazy"
+                  decoding="async"
+                  src="images/ejemplo-producto.jpg"
+                  alt=""
+                />
+
+                <div class="info-prod">
+                  <div class="producto-header">
+                    <p class="producto-name">Conjunto Pijama Saten Top</p>
+                    <p class="opciones">+3 opciones</p>
+                  </div>
+                  <div class="precios">
+                    <div class="caso-unico">
+                      <div class="etiqueta-unico">ÚNICO PRECIO</div>
+                      <p class="precio-unico">$ 5.800</p>
+                    </div>
+                  </div>
+                  <button class="btn-ver-mas">VER MÁS</button>
+                </div>
+              </a>
+            </div>
+
+            <div class="producto-card">
+              <a href="" class="producto-href">
+                <img
+                  class="producto-img"
+                  loading="lazy"
+                  decoding="async"
+                  src="images/ejemplo-producto.jpg"
+                  alt=""
+                />
+
+                <div class="info-prod">
+                  <div class="producto-header">
+                    <p class="producto-name">Conjunto Pijama Saten Top</p>
+                    <p class="opciones">+3 opciones</p>
+                  </div>
+                  <div class="precios">
+                    <div class="caso-oferta">
+                      <div class="etiqueta-oferta">OFERTA</div>
+                      <p class="precio-anterior">$ 6.800</p>
+                      <p class="precio-oferta">$ 5.800</p>
+                    </div>
+                  </div>
+                  <button class="btn-ver-mas">VER MÁS</button>
+                </div>
+              </a>
+            </div>
+
+            <div class="producto-card">
+              <a href="" class="producto-href">
+                <img
+                  class="producto-img"
+                  loading="lazy"
+                  decoding="async"
+                  src="images/ejemplo-producto.jpg"
+                  alt=""
+                />
+
+                <div class="info-prod">
+                  <div class="producto-header">
+                    <p class="producto-name">Conjunto Pijama Saten Top</p>
+                    <p class="opciones">+3 opciones</p>
+                  </div>
+                  <div class="precios">
+                    <div class="caso-mayor-menor">
+                      <!-- en este caso no se ve el precio por menor en el card pero en info-prod si se vera -->
+                      <div class="por-mayor">
+                        <div class="etiqueta-mayor">POR MAYOR</div>
+                        <p class="precio-mayor">$ 5.800</p>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="btn-ver-mas">VER MÁS</button>
+                </div>
+              </a>
+            </div>
+
+            <div class="producto-card">
+              <a href="" class="producto-href">
+                <img
+                  class="producto-img"
+                  loading="lazy"
+                  decoding="async"
+                  src="images/ejemplo-producto.jpg"
+                  alt=""
+                />
+
+                <div class="info-prod">
+                  <div class="producto-header">
+                    <p class="producto-name">Conjunto Pijama Saten Top</p>
+                    <p class="opciones">+3 opciones</p>
+                  </div>
+                  <div class="precios">
+                    <div class="caso-docena">
+                      <div class="etiqueta-docena">DOCENA</div>
+                      <p class="precio-docena">$ 50.800</p>
+                    </div>
+                  </div>
+                  <button class="btn-ver-mas">VER MÁS</button>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <img
+            src="images/flecha-der.webp"
+            class="flecha-carrusel next"
+            onclick="scrollCarrusel(1, 'grid-nuevos')"
+          />
+        </div>
+      </section>
+
+      <section class="sobre-nosotras">
+        <div class="not-cartel">SOBRE NOSOTRAS</div>
+
+        <div class="info-sobre-nosotras">
+          <div class="direccion">
+            <img
+              class="icon-direccion"
+              src="images/ubicacion-icon.webp"
+              alt=""
+            />
+            <h2>Dirección</h2>
+            <p>
+              Campana 560, Galeria Mundo Textil. <br />
+              (local 23 y 25) <br />
+              Flores, Ciudad Autónoma de Buenos Aires.
+            </p>
+          </div>
+
+          <div class="horarios">
+            <img class="icon-horarios" src="images/horario-icon.webp" alt="" />
+            <h2>Horarios del local</h2>
+            <div class="semana">
+              <div>
+                <p>Lunes a Viernes</p>
+                <p>Sabado</p>
+                <p>Domingo</p>
+              </div>
+
+              <div>
+                <p>8:00 a 15:00</p>
+                <p>9:00 a 13:00</p>
+                <p>Cerrado</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4005.604315587541!2d-58.48012092344262!3d-34.62585005866887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc993267983a1%3A0x953bd5fab119147!2sPASEO%20DE%20COMPRAS%20MUNDO%20TEXTIL!5e1!3m2!1ses-419!2sar!4v1768789438516!5m2!1ses-419!2sar"
+          width="100%"
+          height="300"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </section>
+    </main>
+    <footer>
+      <div class="container-footer">
+        <div class="social-media-column">
+          <h2 class="titles-footer">Seguinos</h2>
+          <a class="data" target="_blank" href=""
+            ><img
+              class="icons-data"
+              src="images/instagram-icon.webp"
+              alt=""
+            />@pazbaires</a
+          >
+          <a class="data" target="_blank" href=""
+            ><img
+              class="icons-data"
+              src="images/facebook-icon.webp"
+              alt=""
+            />Paz Baires</a
+          >
+          <a class="data" target="_blank" href=""
+            ><img
+              class="icons-data"
+              src="images/tiktok-icon.webp"
+              alt=""
+            />@paz.baires</a
+          >
+        </div>
+        <div class="contact-column">
+          <h2 class="titles-footer">Contacto</h2>
+          <a class="data" target="_blank" href=""
+            ><img class="icons-data" src="images/telefono-icon.webp" alt="" />11
+            5601 8912</a
+          >
+          <a class="data" target="_blank" href=""
+            ><img
+              class="icons-data"
+              src="images/correo-icon.webp"
+              alt=""
+            />pazbaires.adm@gmail.com</a
+          >
+        </div>
+      </div>
+      <div class="footer-footer">
+        <div class="copyright">
+          <p>Paz Baires © Copyright 2026. Todos los derechos reservados.</p>
+          <hr />
+        </div>
+        <div class="firma-page">
+          <p>Pagina creada por</p>
+          <img src="images/GabCoder.webp" class="firma-icon" alt="" />
+        </div>
+      </div>
+      <div class="chat-whatsapp">
+        <input type="checkbox" id="chat-toggle" class="chat-toggle" />
+        <label for="chat-toggle" class="chat-button">
+          <img src="images/whatsapp-icon.webp" alt="" />Haz click aquí para
+          comunicarte
+        </label>
+
+        <div class="chat-container">
+          <div class="chat-header">
+            <img
+              src="images/paz-baires-logotipo-2.webp"
+              class="chat-logo"
+              alt=""
+            />
+            <div>
+              <h3>Paz Baires</h3>
+              <span class="status">En linea</span>
+            </div>
+            <label for="chat-toggle" class="close-chat">&times;</label>
+          </div>
+          <div class="chat-body">
+            <div class="chat-message">
+              <p>
+                Hola! bienvenido a <b>Paz Baires. 😊</b><br />¿En qué podemos
+                ayudarte?
+              </p>
+            </div>
+          </div>
+          <div class="chat-footer">
+            <input
+              type="text"
+              id="user-message"
+              placeholder="Hola! Vengo de la página web..."
+            />
+            <button class="send-btn" onclick="sendMessage()">➤</button>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

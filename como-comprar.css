@@ -1,0 +1,468 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+/* Le avisas al navegador que tu web SOLO está diseñada para modo claro */
+:root {
+    color-scheme: light;
+}
+
+/* Opcional: Si quieres forzarlo a nivel general en la etiqueta HTML */
+html {
+    color-scheme: light only;
+}
+
+body {
+    color-scheme: light;
+    -webkit-text-size-adjust: 100%;
+    /* Esto evita que iOS y navegadores in-app agranden la letra */
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-family: "Unbounded", sans-serif;
+    background-image: linear-gradient(to bottom, #7454d9, #8e6fe3, #a78bed, #bfa7f6, #d6c3ff);
+}
+
+/*-----------------TOP BAR-----------------*/
+.top-bar {
+    background-color: #8e6fe3;
+    color: #ffffff;
+    height: 30px;
+    /* Altura fija obligatoria */
+    overflow: hidden;
+    /* Esconde lo que sobra */
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    /* IMPORTANTE: obliga a la pista a ser tan larga como el texto */
+    animation: marquee-infinito 10s linear infinite;
+    /* 6s es muy rápido para compu, probá con 15s */
+}
+
+.marquee-content {
+    display: flex;
+    flex-shrink: 0;
+    /* Evita que los bloques se achiquen */
+}
+
+.marquee-track span {
+    font-size: 12px;
+    font-weight: bold;
+    padding-right: 60px;
+    /* Espacio entre repeticiones */
+    text-transform: uppercase;
+    text-transform: uppercase;
+    white-space: nowrap;
+    ;
+}
+
+@keyframes marquee-infinito {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+
+    /* Al llegar a -50%, el Bloque 2 está exactamente donde empezó el 1, 
+       haciendo que el salto sea imperceptible */
+}
+
+/*-----------------HEADER-----------------*/
+.header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    /* Tres columnas: izquierda, logo, derecha */
+    align-items: center;
+    /* Centra verticalmente */
+    margin: 0 5%;
+    padding: 10px 15px;
+    background-color: #ffffff;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.logo {
+    width: 190px;
+    height: auto;
+    justify-self: center;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    justify-self: start;
+}
+
+.nav-link a {
+    text-decoration: none;
+    color: #7454d9;
+}
+
+/* Estilo para el enlace activo */
+.nav-link a.active {
+    padding: 7px 8px;
+    border-radius: 10px;
+    font-weight: bold;
+    background-color: #7B68EE;
+    /* El color violeta de tu fondo */
+    color: white;
+    /* Texto blanco */
+}
+
+.carrito {
+    text-decoration: none;
+    color: #7454d9;
+    display: flex;
+    align-items: center;
+    justify-self: end;
+}
+
+.icon {
+    width: 25px;
+    height: auto;
+    margin-left: 8px;
+    margin-right: 0;
+}
+
+/*-----------------FOOTER-----------------*/
+footer {
+    background-color: #ffffff;
+    margin: 0 5%;
+    border-radius: 20px 20px 0 0;
+    padding: 30px;
+}
+
+.container-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 0;
+}
+
+.social-media-column,
+.contact-column {
+    flex: 1 1 300px;
+}
+
+.icons-data {
+    width: 40px;
+    height: auto;
+    margin-right: 5px;
+}
+
+.titles-footer {
+    color: #7454d9;
+    margin: 30px 0;
+}
+
+.data {
+    text-decoration: none;
+    color: #7454d9;
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.copyright,
+.firma-page {
+    color: #7454d9;
+}
+
+.copyright p {
+    margin: 5px;
+    text-align: end;
+}
+
+hr {
+    border: 2px solid;
+    border-radius: 50px;
+    color: #7454d9;
+    opacity: 0.3;
+}
+
+.firma-page {
+    text-align: center;
+}
+
+.firma-page p {
+    margin: 5px;
+}
+
+.firma-icon {
+    width: auto;
+    height: 50px;
+}
+
+/*-----------------FOOTER (whatsapp)-----------------*/
+.chat-toggle {
+    display: none;
+}
+
+.chat-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #65cf72;
+    border: 0;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    animation: slideInRight 1.5s ease-out;
+    z-index: 10;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chat-button img {
+    width: 30px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.chat-container {
+    width: 360px;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background: #d6c3ff;
+    border-radius: 20px;
+    display: none;
+    flex-direction: column;
+    z-index: 10;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Mostrar chat cuando el checkbox está activo */
+.chat-toggle:checked~.chat-container {
+    display: flex;
+}
+
+.chat-header {
+    background: #7454d9;
+    color: white;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    /* Alinear verticalmente */
+    gap: 8px;
+    /* Espacio entre la imagen y el nombre */
+    border-radius: 20px;
+    position: relative;
+    /* Necesario para mover la "X" */
+}
+
+.chat-header h3 {
+    margin: 0;
+    margin-top: 10px;
+}
+
+.chat-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background-color: #ffffff;
+    padding: 5px;
+}
+
+.status {
+    font-size: 12px;
+    color: #d6c3ff;
+}
+
+.close-chat {
+    position: absolute;
+    top: 10px;
+    /* Mover más arriba */
+    right: 15px;
+    /* Ajustar la posición a la derecha */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* Ocultar chat cuando se cierra */
+.chat-toggle:not(:checked)~.chat-container {
+    display: none;
+}
+
+.chat-body {
+    background: #d6c3ff;
+    padding: 15px;
+}
+
+.chat-message {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.chat-message p {
+    line-height: 30px;
+}
+
+.chat-footer {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: #ffffff;
+    border-radius: 20px;
+}
+
+.chat-footer input {
+    flex: 1;
+    border: none;
+    color: gray;
+    background: #ffffff;
+    box-sizing: border-box;
+    font-family: "Unbounded", sans-serif;
+}
+
+.send-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+main {
+    padding: 0 10%;
+    margin-top: 120px;
+}
+
+/*-----------------ACORDEONES-----------------*/
+.preguntas-frecuentes {
+    text-align: center;
+    color: #ffffff;
+}
+
+.header-item {
+    background-color: #ffffff;
+    color: #b591ef;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 20px;
+    gap: 10px;
+}
+
+.icon-acordeon {
+    width: 40px;
+    height: auto;
+}
+
+.contenido-acordeon {
+    background-color: #d6c3ff;
+    color: #7454d9;
+    padding: 15px;
+    border-radius: 20px;
+    margin: 5px 0 20px 0;
+}
+
+.contenido-acordeon p {
+    line-height: 25px;
+}
+
+/*-----------------RESPONSIVE-----------------*/
+@media (max-width: 1100px) {
+    main {
+        padding: 0 4%;
+    }
+
+    .header,
+    footer {
+        margin: 0 1%;
+    }
+}
+
+@media (max-width: 1000px) {
+    main {
+        margin-top: 180px;
+    }
+
+    .header {
+        /* Cambiamos el grid por flexbox solo para celular */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        font-size: 9px;
+        /* El primer valor (15px) es la separación vertical entre logo y textos. 
+       El segundo (25px) es la separación horizontal entre los textos. */
+        gap: 10px 10px;
+        padding: 15px 10px;
+    }
+
+    /* 1. Forzamos al logo a ocupar toda la línea superior (100% de ancho) */
+    .logo-container {
+        flex: 0 0 100%;
+        display: flex;
+        justify-content: center;
+        order: 1;
+        /* Le decimos que vaya primero */
+    }
+
+    /* 2. LA MAGIA: Hacemos que el contenedor .nav-link desaparezca visualmente,
+     así sus enlaces ("COMO COMPRAR" y "TIENDA") quedan sueltos al nivel del carrito */
+    .nav-link {
+        display: contents;
+    }
+
+    /* 3. Acomodamos los textos en la segunda línea */
+    .nav-link a,
+    .carrito {
+        order: 2;
+        /* Les decimos que vayan en el segundo bloque */
+        font-size: 11px;
+        /* Achicamos penitas la letra para asegurar que entren en pantallas chicas */
+        margin: 0;
+    }
+
+    .icon {
+        width: 18px;
+        height: auto;
+        margin-left: 5px;
+    }
+}
+
+@media (max-width: 650px) {
+    .chat-button {
+        bottom: 10px;
+        right: 10px;
+        padding: 8px 10px;
+        border-radius: 10px;
+    }
+
+    .chat-button img {
+        width: 25px;
+    }
+
+    .chat-container {
+        width: 330px;
+        bottom: 60px;
+        right: 10px;
+    }
+}
